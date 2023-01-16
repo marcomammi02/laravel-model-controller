@@ -7,6 +7,16 @@
     <title>Page</title>
 </head>
 <body>
-    Sono la pagina
+    <ul>
+        @foreach ($movies as $movie)
+        <li>
+            <h1>{{ $movie->title }}</h1>
+            <p>Original title: {{ $movie->original_title }}</p>
+            <p>Nationality: {{ ucfirst($movie->nationality) }}</p>
+            <p>Date: {{ $movie->date }}</p>
+            <p>Vote: {{ $movie->vote }}</p>
+        </li>
+        @endforeach
+    </ul>
 </body>
 </html>
